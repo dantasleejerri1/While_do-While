@@ -1,24 +1,17 @@
 
 const r = require('readline-sync');
 
-// variaveis
-let soma = 0;
-let contador = 1;
+// média com do while
 
-//contador para controlar o numero de notas
-while( contador <=5) {
+let somadowhile =0;
+let contadorDoWhile = 1;
 
-    // solicita a nota do usuário
-    let nota = parseFloat(r.question(`Nota ${contador + 1}: `));
+do{
+    let nota = parseFloat(r.question('Nota ${contadorDoWhile}:'));
+    somadowhile += nota;
+    contadorDoWhile++;
 
-    // realiza o calculo das notas, 4 notas.
-    soma += nota;
+} while(contadorDoWhile <= 5);
 
-    // incremta o contador para a próxima nota
-    contador++;
-}
-
-// define a media a soma da 4 notas dividida por 4, para obter a media
-let media = soma / 5;
-//printa a média e sua toFixed para limitar a 2 casas decimais.
-console.log("A média é: " + media.toFixed(2));
+let mediadowhile = somadowhile / 5;
+console.log("a média é: " + mediadowhile.toFixed(2));
