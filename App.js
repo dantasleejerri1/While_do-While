@@ -1,15 +1,24 @@
+
 const r = require('readline-sync');
 
-let nota;
+// variaveis
+let soma = 0;
+let contador = 1;
 
-do {
-    nota = parseFloat (r.question(" Óla Rodrigo digite a nota (0 a 10 ): "));
+//contador para controlar o numero de notas
+while( contador <=5) {
 
-    if(nota < 0 || nota > 10) {
-        console.log("Nota inválida. Digite uma nota entre (0 e 10).");
-        
-    }
+    // solicita a nota do usuário
+    let nota = parseFloat(r.question(`Nota ${contador + 1}: `));
 
-}while (nota < 0 || nota > 10);
+    // realiza o calculo das notas, 4 notas.
+    soma += nota;
 
-console.log("Nota válida: " + nota);
+    // incremta o contador para a próxima nota
+    contador++;
+}
+
+// define a media a soma da 4 notas dividida por 4, para obter a media
+let media = soma / 5;
+//printa a média e sua toFixed para limitar a 2 casas decimais.
+console.log("A média é: " + media.toFixed(2));
